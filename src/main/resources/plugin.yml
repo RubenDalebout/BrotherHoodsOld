@@ -1,0 +1,11 @@
+name: BrotherHoods
+version: '${project.version}'
+main: io.github.rubendalebout.brotherhoods.BrotherHoods
+authors: [ DeZeeuw ]
+commands:
+  kingdoms:
+    description: View the list of kingdoms
+    aliases: [ ks, kingdomlist, klist ]
+permissions:
+  brotherhoods.kingdom:
+    description: Allows you to see all the Kingdoms

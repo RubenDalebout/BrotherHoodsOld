@@ -1,0 +1,23 @@
+#   _  ___                 _
+# | |/ (_)               | |
+# | ' / _ _ __   __ _  __| | ___  _ __ ___  ___
+# |  < | | '_ \ / _` |/ _` |/ _ \| '_ ` _ \/ __|
+# | . \| | | | | (_| | (_| | (_) | | | | | \__ \
+# |_|\_\_|_| |_|\__, |\__,_|\___/|_| |_| |_|___/
+#                __/ |
+#               |___/
+kingdoms:
+  ardenia:
+    name: "Ardenia"
+  draconis:
+    name: "Draconis"
+  eryndor:
+    name: "Eryndor"
+  lyra:
+    name: "Lyra"
+  nymira:
+    name: "Nymira"
+  solandria:
+    name: "Solandria"
+  valoria:
+    name: "Valoria"
