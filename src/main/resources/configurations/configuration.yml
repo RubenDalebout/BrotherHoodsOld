@@ -9,6 +9,14 @@
 prefix: '&7[&c&lBrotherHoods&7]'
 
 # Kingdom command messages
+c-kingdom-add-exists: "&cThe kingdom your trying to add already exists"
+c-kingdom-add-error: "&cSomething has gone wrong while adding the kingdom"
+c-kingdom-add-success: "&aSuccessfully added the kingdom"
+c-kingdom-add-arguments: "&cWrong arguments &4&l/kingdom add <name>"
+c-kingdom-remove-not-exist: "&cThe kingdom you specified does not exist"
+c-kingdom-remove-error: "&cSomething has gone wrong while removing the kingdom"
+c-kingdom-remove-success: "&aSuccessfully removed the kingdom"
+c-kingdom-remove-arguments: "&cWrong arguments &4&l/kingdom remove <name>"
 c-kingdom-arguments: "&cWrong arguments &4&l/kingdom [add/remove]"
 
 # General messages

@@ -37,13 +37,27 @@ public class KingdomManager {
         return kingdomList;
     }
 
-    private void addKingdom(Kingdom... kingdoms) {
+    public void addKingdom(Kingdom... kingdoms) {
         for (Kingdom kingdom : kingdoms) {
             kingdomList.add(kingdom);
         }
     }
 
-    private void removeKingdom(UUID uuid) {
+    public void removeKingdom(UUID uuid) {
         kingdomList.removeIf(kingdom -> kingdom.getId().equals(uuid));
+    }
+
+    public Boolean kingdomExists(String name) {
+        return kingdomList.stream()
+                .anyMatch(kingdom -> kingdom.getName().equalsIgnoreCase(name));
+    }
+
+    public Kingdom getKingdom(UUID uuid, String name) {
+        return kingdomList.stream()
+                .filter(kingdom -> uuid != null ? kingdom.getId().equals(uuid)
+                        : name != null ? kingdom.getName().equalsIgnoreCase(name)
+                        : false)
+                .findFirst()
+                .orElse(null);
     }
 }
