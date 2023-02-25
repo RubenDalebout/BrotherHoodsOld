@@ -8,7 +8,10 @@
 #                          |___/
 prefix: '&7[&c&lBrotherHoods&7]'
 
-# Messages
+# Kingdom command messages
+c-kingdom-arguments: "&cWrong arguments &4&l/kingdom [add/remove]"
+
+# General messages
 no-permission: '&cYou do not have permission to do this.'
 
 # GUI Settings
