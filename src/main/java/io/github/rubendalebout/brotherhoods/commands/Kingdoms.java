@@ -5,11 +5,14 @@ import io.github.rubendalebout.brotherhoods.classes.Kingdom;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class Kingdoms implements CommandExecutor {
+public class Kingdoms implements CommandExecutor, TabCompleter {
     private final BrotherHoods plugin;
 
     public Kingdoms(BrotherHoods plugin) {
@@ -34,5 +37,12 @@ public class Kingdoms implements CommandExecutor {
         sender.sendMessage(plugin.getFormat().color("&cNog in ontwikkeling", true));
 
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> completions = new ArrayList<>();
+
+        return completions;
     }
 }
