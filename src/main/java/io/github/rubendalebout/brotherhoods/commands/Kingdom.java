@@ -86,22 +86,28 @@ public class Kingdom implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> completions = new ArrayList<>();
 
-        // Args 0
-        if (args.length == 0) {
+        // Args 1
+        if (args.length == 1) {
             // Add permission
-            if (sender.hasPermission("brotherhoods.kingdom.add")) completions.add("add");
+            if (sender.hasPermission("brotherhoods.kingdom.add") && "add".startsWith(args[0])) {
+                completions.add("add");
+            }
             // Remove permission
-            if (sender.hasPermission("brotherhoods.kingdom.remove")) completions.add("remove");
+            if (sender.hasPermission("brotherhoods.kingdom.remove") && "remove".startsWith(args[0])) {
+                completions.add("remove");
+            }
         }
 
-        // Args 1 with add or remove
-        if (args.length == 1 && (args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("remove"))) {
+        // Args 2 with add or remove
+        if (args.length == 2 && (args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("remove"))) {
             // Add or remove permission
             if ((args[0].equalsIgnoreCase("add") && sender.hasPermission("brotherhoods.kingdom.add")) ||
                     (args[0].equalsIgnoreCase("remove") && sender.hasPermission("brotherhoods.kingdom.remove"))) {
                 // Add the list of kingdoms
                 for(io.github.rubendalebout.brotherhoods.classes.Kingdom kingdom : plugin.getKingdomManager().getKingdomList()) {
-                    completions.add(kingdom.getName());
+                    if (kingdom.getName().toLowerCase().startsWith(args[1].toLowerCase())) {
+                        completions.add(kingdom.getName().substring(0, 1).toUpperCase() + kingdom.getName().substring(1));
+                    }
                 }
             }
         }
