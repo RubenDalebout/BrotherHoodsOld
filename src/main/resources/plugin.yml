@@ -5,9 +5,15 @@ authors: [ DeZeeuw ]
 commands:
   kingdom:
     description: Add or remove an kingdom to the kingdoms list
+    usage: "/<command>"
   kingdoms:
     description: View the list of kingdoms
     aliases: [ ks, kingdomlist, klist ]
+    usage: "/<command>"
 permissions:
-  brotherhoods.kingdom:
-    description: Allows you to see all the Kingdoms
+  brotherhoods.kingdom.add:
+    description: Allows you to add an kingdom
+  brotherhoods.kingdom.remove:
+    description: Allows you to remove an kingdom
+  brotherhoods.kingdoms:
+    description: Allows you to see all the kingdoms
