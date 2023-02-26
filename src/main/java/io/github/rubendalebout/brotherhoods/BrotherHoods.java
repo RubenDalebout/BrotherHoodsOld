@@ -2,6 +2,7 @@ package io.github.rubendalebout.brotherhoods;
 
 import io.github.rubendalebout.brotherhoods.managers.CommandManager;
 import io.github.rubendalebout.brotherhoods.managers.ConfigManager;
+import io.github.rubendalebout.brotherhoods.managers.EventManager;
 import io.github.rubendalebout.brotherhoods.managers.KingdomManager;
 import io.github.rubendalebout.brotherhoods.utils.ChatFormat;
 import org.bukkit.command.ConsoleCommandSender;
@@ -13,6 +14,7 @@ public final class BrotherHoods extends JavaPlugin {
     private ChatFormat format;
     private ConfigManager configManager;
     private KingdomManager kingdomManager;
+    private EventManager eventManager;
     private CommandManager commandManager;
     @Override
     public void onEnable() {
@@ -24,6 +26,8 @@ public final class BrotherHoods extends JavaPlugin {
         configManager = new ConfigManager(this);
         // Load kingdoms
         kingdomManager = new KingdomManager(this);
+        // Set events
+        eventManager = new EventManager(this);
         // Set commands
         commandManager = new CommandManager(this);
 

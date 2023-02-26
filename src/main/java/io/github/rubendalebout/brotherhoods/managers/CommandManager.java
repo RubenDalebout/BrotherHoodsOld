@@ -16,6 +16,6 @@ public class CommandManager {
         PluginCommand kdsCommand = plugin.getCommand("kingdoms");
         Kingdoms kingdoms = new Kingdoms(plugin);
         kdsCommand.setExecutor(kingdoms);
-//        kdsCommand.setTabCompleter(kingdoms);
+        kdsCommand.setTabCompleter(kingdoms);
     }
 }
