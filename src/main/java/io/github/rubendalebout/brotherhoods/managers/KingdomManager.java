@@ -30,7 +30,7 @@ public class KingdomManager {
             Kingdom kingdom = new Kingdom(formattedName)
                     .setDisplayName((!display.isEmpty()) ? display : name)
                     .setDisplayItem(new Banner((plugin.getConfigManager().getKingdomConfiguration().getInt("kingdoms." + key + ".banner"))))
-                    .setDescription((!description.isEmpty()) ? description : "&cNo description");
+                    .setDescription((!description.isEmpty()) ? description : plugin.getConfigManager().getGeneralConfiguration().getString("kingdom-no-description"));
 
             kingdoms.add(kingdom);
         }

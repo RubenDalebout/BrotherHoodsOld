@@ -23,5 +23,8 @@ c-kingdom-arguments: "&cWrong arguments &4&l/kingdom [add/remove]"
 enabled: "&aPlugin is enabled"
 no-permission: '&cYou do not have permission to do this.'
 
+# Kingdom messages / texts
+kingdom-no-description: "&cNo description"
+
 # GUI Settings
 g-kingdoms: true # Set to true to enable GUI view for kingdom list in-game
