@@ -2,6 +2,7 @@ package io.github.rubendalebout.brotherhoods.managers;
 
 import io.github.rubendalebout.brotherhoods.BrotherHoods;
 import io.github.rubendalebout.brotherhoods.classes.Kingdom;
+import io.github.rubendalebout.brotherhoods.utils.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,8 @@ public class KingdomManager {
             String display = plugin.getConfigManager().getKingdomConfiguration().getString("kingdoms." + key + ".display");
 
             Kingdom kingdom = new Kingdom(formattedName)
-                    .setDisplayName((!display.isEmpty()) ? display : name);
+                    .setDisplayName((!display.isEmpty()) ? display : name)
+                    .setDisplayItem(new Banner((plugin.getConfigManager().getKingdomConfiguration().getInt("kingdoms." + key + ".banner"))));
 
             kingdoms.add(kingdom);
         }

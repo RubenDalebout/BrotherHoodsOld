@@ -59,7 +59,7 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
 
         for (int i = 0; i < kingdoms.size(); i++) {
             Kingdom kingdom = kingdoms.get(i);
-            ItemStack item = new ItemStack(Material.DIRT, 1);
+            ItemStack item = kingdom.getDisplayItem();
             ItemMeta meta = item.getItemMeta();
             meta.setDisplayName(plugin.getFormat().color("&7" + kingdom.getDisplayName(), false));
             item.setItemMeta(meta);

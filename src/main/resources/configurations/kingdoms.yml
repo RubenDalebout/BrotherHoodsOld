@@ -10,21 +10,28 @@ kingdoms:
   ardenia:
     name: "Ardenia"
     display: "&bArdenia"
+    banner: 3
   draconis:
     name: "Draconis"
     display: "&cDragonis"
+    banner: 14
   eryndor:
     name: "Eryndor"
     display: "&6Eryndor"
+    banner: 1
   lyra:
     name: "Lyra"
     display: "&aLyra"
+    banner: 5
   nymira:
     name: "Nymira"
     display: "&dNymira"
+    banner: 6
   solandria:
     name: "Solandria"
     display: "&3Solandria"
+    banner: 9
   valoria:
     name: "Valoria"
     display: "&eValoria"
+    banner: 4
