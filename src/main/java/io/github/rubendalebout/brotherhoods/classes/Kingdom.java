@@ -10,6 +10,8 @@ public class Kingdom {
     protected String displayName;
     protected ItemStack displayItem;
 
+    protected String description;
+
     public UUID getId() {
         return id;
     }
@@ -38,5 +40,14 @@ public class Kingdom {
 
     public ItemStack getDisplayItem() {
         return displayItem;
+    }
+
+    public Kingdom setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 }
