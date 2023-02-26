@@ -32,7 +32,7 @@ public final class BrotherHoods extends JavaPlugin {
         commandManager = new CommandManager(this);
 
         // Plugin startup logic
-        console.sendMessage(format.color("&aPlugin opgestart", true));
+        console.sendMessage(format.color(this.configManager.getGeneralConfiguration().getString("enabled"), true));
     }
 
     @Override

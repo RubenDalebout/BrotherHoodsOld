@@ -20,6 +20,7 @@ c-kingdom-remove-arguments: "&cWrong arguments &4&l/kingdom remove <name>"
 c-kingdom-arguments: "&cWrong arguments &4&l/kingdom [add/remove]"
 
 # General messages
+enabled: "&aPlugin is enabled"
 no-permission: '&cYou do not have permission to do this.'
 
 # GUI Settings
