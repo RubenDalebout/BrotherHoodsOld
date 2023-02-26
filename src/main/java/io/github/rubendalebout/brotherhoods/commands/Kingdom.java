@@ -4,8 +4,12 @@ import io.github.rubendalebout.brotherhoods.BrotherHoods;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 
-public class Kingdom implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Kingdom implements CommandExecutor, TabCompleter {
 
     private final BrotherHoods plugin;
 
@@ -76,5 +80,32 @@ public class Kingdom implements CommandExecutor {
         // Send the arguments to the user
         sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-kingdom-arguments"), true));
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> completions = new ArrayList<>();
+
+        // Args 0
+        if (args.length == 0) {
+            // Add permission
+            if (sender.hasPermission("brotherhoods.kingdom.add")) completions.add("add");
+            // Remove permission
+            if (sender.hasPermission("brotherhoods.kingdom.remove")) completions.add("remove");
+        }
+
+        // Args 1 with add or remove
+        if (args.length == 1 && (args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("remove"))) {
+            // Add or remove permission
+            if ((args[0].equalsIgnoreCase("add") && sender.hasPermission("brotherhoods.kingdom.add")) ||
+                    (args[0].equalsIgnoreCase("remove") && sender.hasPermission("brotherhoods.kingdom.remove"))) {
+                // Add the list of kingdoms
+                for(io.github.rubendalebout.brotherhoods.classes.Kingdom kingdom : plugin.getKingdomManager().getKingdomList()) {
+                    completions.add(kingdom.getName());
+                }
+            }
+        }
+
+        return completions;
     }
 }
