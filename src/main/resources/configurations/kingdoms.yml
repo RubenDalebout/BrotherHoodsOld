@@ -11,27 +11,34 @@ kingdoms:
     name: "Ardenia"
     display: "&bArdenia"
     banner: 3
+    description: Ardenia is a prosperous and peaceful land ruled by the wise and compassionate Queen Elora. The people of Ardenia are known for their intelligence, skill, and love of knowledge. Under Queen Elora's guidance, schools and libraries have been established, trade relations with other lands have been fostered, and conflicts have been avoided through diplomacy. Queen Elora's legacy continues to shape the future of Ardenia, and the people remain hopeful and optimistic under her rule.
   draconis:
     name: "Draconis"
     display: "&cDragonis"
     banner: 14
+    description: Draconis is a rugged and harsh land ruled by King Draven, a powerful and admired leader descended from dragons. The people of Draconis are known for their strength and resilience, and they thrive in the challenging conditions of their land. Under King Draven's guidance, they prosper through trade with other lands and their own hunting and warrior skills. The people of Draconis are determined to preserve their way of life, and they remain loyal to their king, who continues to lead them with strength and courage.
   eryndor:
     name: "Eryndor"
     display: "&6Eryndor"
     banner: 1
+    description: Eryndor is a beautiful and verdant land ruled by Queen Seraphina, a powerful and wise leader who is deeply connected to nature and skilled in magic. The people of Eryndor prosper through their farming and craftsmanship skills, as well as their ability to harness the power of magic. They trade with other lands and remain resilient in the face of challenges. Queen Seraphina continues to lead with wisdom and power, shaping the future of Eryndor, and her people remain hopeful and optimistic.
   lyra:
     name: "Lyra"
     display: "&aLyra"
     banner: 5
+    description: Lyra is a land ruled by King Orion, known for their exceptional skills in archery and hunting, nestled amongst the dense forests of Athal, and living in harmony with the land. Despite conflicts with Draconis, Lyra has a deep friendship with Ardenia and a friendly relationship with Eryndor, thriving under the leadership of King Orion and their skilled archers.
   nymira:
     name: "Nymira"
     display: "&dNymira"
     banner: 6
+    description: Nymira is a mysterious and feared kingdom ruled by Queen Mira from the shadows, with little known about her or her people. The residents of Nymira are fearful and uninviting towards outsiders, and rumors about ghosts and magical abilities only add to the kingdom's enigmatic reputation. Despite its allure to adventurers, most are too afraid to explore the unknown land.
   solandria:
     name: "Solandria"
     display: "&3Solandria"
     banner: 9
+    description: Solandria is a peaceful and prosperous kingdom in the world of Athal, known for its love of justice, fair and compassionate leadership under King Solas, and thriving trade and commerce. The people of Solandria maintain their neutrality in conflicts with other kingdoms and focus on promoting peace and trade, making their kingdom a popular destination for traders from all over the world.
   valoria:
     name: "Valoria"
     display: "&eValoria"
     banner: 4
+    description: Valoria, led by the ambitious Queen Victoria, aimed to become the most powerful kingdom in the world by expanding their land. This led to conflict with neighboring kingdom Solandria and eventually a war against a united front of kingdoms, resulting in Valoria's defeat and punishment. Despite this, Valoria remained determined to expand, causing tension and the fear of another conflict in Athal.
