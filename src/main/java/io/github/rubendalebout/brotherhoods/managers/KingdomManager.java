@@ -25,10 +25,12 @@ public class KingdomManager {
             String name = plugin.getConfigManager().getKingdomConfiguration().getString("kingdoms." + key + ".name");
             String formattedName = name.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
             String display = plugin.getConfigManager().getKingdomConfiguration().getString("kingdoms." + key + ".display");
+            String description = plugin.getConfigManager().getKingdomConfiguration().getString("kingdoms." + key + ".description");
 
             Kingdom kingdom = new Kingdom(formattedName)
                     .setDisplayName((!display.isEmpty()) ? display : name)
-                    .setDisplayItem(new Banner((plugin.getConfigManager().getKingdomConfiguration().getInt("kingdoms." + key + ".banner"))));
+                    .setDisplayItem(new Banner((plugin.getConfigManager().getKingdomConfiguration().getInt("kingdoms." + key + ".banner"))))
+                    .setDescription((!description.isEmpty()) ? description : "&cNo description");
 
             kingdoms.add(kingdom);
         }
