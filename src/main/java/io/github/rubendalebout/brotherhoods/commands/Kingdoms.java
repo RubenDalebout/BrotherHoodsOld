@@ -14,7 +14,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Kingdoms implements CommandExecutor, TabCompleter {
@@ -62,6 +65,17 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
             ItemStack item = kingdom.getDisplayItem();
             ItemMeta meta = item.getItemMeta();
             meta.setDisplayName(plugin.getFormat().color("&7" + kingdom.getDisplayName(), false));
+
+            String description = kingdom.getDescription();
+            List<String> lines = new ArrayList<>();
+            int maxLineLength = 50;
+            Pattern pattern = Pattern.compile("\\b.{1," + (maxLineLength-1) + "}\\b\\W?");
+            Matcher matcher = pattern.matcher(description);
+            while (matcher.find()) {
+                lines.add(plugin.getFormat().color(matcher.group().trim(), false));
+            }
+            meta.setLore(lines);
+
             item.setItemMeta(meta);
             gui.setItem(i, item);
         }
