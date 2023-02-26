@@ -2,11 +2,16 @@ package io.github.rubendalebout.brotherhoods.commands;
 
 import io.github.rubendalebout.brotherhoods.BrotherHoods;
 import io.github.rubendalebout.brotherhoods.classes.Kingdom;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +31,7 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        if (!(sender instanceof Player) || !plugin.getConfigManager().getGeneralConfiguration().getBoolean("kingdom-list")) {
+        if (!(sender instanceof Player) || !plugin.getConfigManager().getGeneralConfiguration().getBoolean("g-kingdoms")) {
             sender.sendMessage(plugin.getFormat().color(plugin.getKingdomManager().getKingdomList()
                     .stream()
                     .map(Kingdom::getDisplayName)
@@ -34,8 +39,7 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        sender.sendMessage(plugin.getFormat().color("&cNog in ontwikkeling", true));
-
+        this.openGUI((Player) sender);
         return true;
     }
 
@@ -44,5 +48,24 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
         List<String> completions = new ArrayList<>();
 
         return completions;
+    }
+
+    private void openGUI(Player player) {
+        List<Kingdom> kingdoms = plugin.getKingdomManager().getKingdomList();
+        int rows = (int) Math.ceil(kingdoms.size() / 9.0);
+        int slots = rows * 9;
+
+        Inventory gui = Bukkit.createInventory(player, slots, plugin.getFormat().color("&6&lKingdom(s)", false));
+
+        for (int i = 0; i < kingdoms.size(); i++) {
+            Kingdom kingdom = kingdoms.get(i);
+            ItemStack item = new ItemStack(Material.DIRT, 1);
+            ItemMeta meta = item.getItemMeta();
+            meta.setDisplayName(plugin.getFormat().color("&7" + kingdom.getDisplayName(), false));
+            item.setItemMeta(meta);
+            gui.setItem(i, item);
+        }
+
+        player.openInventory(gui);
     }
 }

@@ -24,4 +24,4 @@ enabled: "&aPlugin is enabled"
 no-permission: '&cYou do not have permission to do this.'
 
 # GUI Settings
-kingdom-list: false # Set to true to enable GUI view for in-game
+g-kingdoms: true # Set to true to enable GUI view for kingdom list in-game
