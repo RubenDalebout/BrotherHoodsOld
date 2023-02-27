@@ -3,6 +3,9 @@ version: '${project.version}'
 main: io.github.rubendalebout.brotherhoods.BrotherHoods
 authors: [ DeZeeuw ]
 commands:
+  brotherhoods:
+    description: View the list of Brotherhoods
+    usage: "/<command>"
   kingdom:
     description: Add or remove an kingdom to the kingdoms list
     usage: "/<command>"
@@ -11,6 +14,8 @@ commands:
     aliases: [ ks, kingdomlist, klist ]
     usage: "/<command>"
 permissions:
+  brotherhoods.brotherhoods:
+    description: Allows you to see all the brotherhoods
   brotherhoods.kingdom.add:
     description: Allows you to add an kingdom
   brotherhoods.kingdom.remove:
