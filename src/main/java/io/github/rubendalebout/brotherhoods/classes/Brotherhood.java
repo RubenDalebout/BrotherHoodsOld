@@ -2,6 +2,8 @@ package io.github.rubendalebout.brotherhoods.classes;
 
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Brotherhood {
@@ -9,6 +11,8 @@ public class Brotherhood {
     protected String name;
     protected String displayName;
     protected ItemStack displayItem;
+
+    protected List<UUID> players = new ArrayList<>();
 
     protected int enteringLevel;
 
@@ -42,20 +46,17 @@ public class Brotherhood {
         return displayItem;
     }
 
-    public Brotherhood setEnteringLevel(int enteringLevel) {
-        this.enteringLevel = enteringLevel;
-        return this;
+    public List<UUID> getPlayers() {
+        return this.players;
     }
 
-    public int getEnteringLevel() {
-        return enteringLevel;
+    public void addPlayer(UUID uuid) {
+        if (!this.players.contains(uuid))
+            this.players.add(uuid);
     }
 
-    public String getEnteringLevelText() {
-        if (this.enteringLevel <= 0) return "&aOpen";
-        if (this.enteringLevel == 1) return "&6Invite-only";
-        if (this.enteringLevel >= 2) return "&4Closed";
-
-        return "&cError";
+    public void removePlayer(UUID uuid) {
+        if (this.players.contains(uuid))
+            this.players.remove(uuid);
     }
 }

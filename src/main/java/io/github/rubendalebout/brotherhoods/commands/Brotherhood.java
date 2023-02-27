@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,14 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        // Check if sender is not a player
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(plugin.getFormat().color("&cKan alleen als speler", true));
+            return true;
+        }
+
+        Player player = (Player) sender;
+
         // Check if there are arguments
         if (args.length > 0) {
 
@@ -30,7 +39,8 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
         }
 
         // No arguments so check if user is in a Brotherhood
-        if (false) {
+        if (plugin.getPlayerManager().getBrotherhood(player.getUniqueId()) != null) {
+            sender.sendMessage("brotherhood informatie");
             return true;
         }
 

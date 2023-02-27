@@ -12,6 +12,7 @@ public final class BrotherHoods extends JavaPlugin {
     private ConfigManager configManager;
     private KingdomManager kingdomManager;
     private BrotherhoodManager brotherhoodManager;
+    private PlayerManager playerManager;
     private EventManager eventManager;
     private CommandManager commandManager;
     @Override
@@ -26,6 +27,8 @@ public final class BrotherHoods extends JavaPlugin {
         kingdomManager = new KingdomManager(this);
         // Load Brotherhoods
         brotherhoodManager = new BrotherhoodManager(this);
+        // Load players
+        playerManager = new PlayerManager(this);
         // Set events
         eventManager = new EventManager(this);
         // Set commands
@@ -57,5 +60,9 @@ public final class BrotherHoods extends JavaPlugin {
 
     public BrotherhoodManager getBrotherhoodManager() {
         return brotherhoodManager;
+    }
+
+    public PlayerManager getPlayerManager() {
+        return playerManager;
     }
 }

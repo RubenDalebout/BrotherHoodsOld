@@ -38,4 +38,8 @@ public class BrotherhoodManager {
                 .findFirst()
                 .orElse(null);
     }
+
+    public boolean hasBrotherhood(UUID player) {
+        return brotherhoodList.stream().anyMatch(brotherhood -> brotherhood.getPlayers().contains(player));
+    }
 }
