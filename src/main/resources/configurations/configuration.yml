@@ -9,6 +9,10 @@
 prefix: '&7[&c&lBrotherHoods&7]'
 
 # Brotherhood command message
+c-brotherhood-create-exists: "&cBrotherhood already exists"
+c-brotherhood-create-arguments: "&cWrong arguments &4&l/brotherhood create <name>"
+c-brotherhood-create-success: "&aCreated the Brotherhood successful"
+c-brotherhood-create-failure: "&cSomething has gone wrong while adding the Brotherhood"
 c-brotherhood-not-in: "&cYou are not in a Brotherhood join one first"
 
 # Brotherhoods command message

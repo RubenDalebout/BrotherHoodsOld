@@ -34,8 +34,37 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
 
         // Check if there are arguments
         if (args.length > 0) {
+            String subcommand = args[0];
 
-            return true;
+            // Create brotherhood
+            if (subcommand.equalsIgnoreCase("create") && sender.hasPermission("brotherhood.create")) {
+                if (args.length == 2) {
+                    String displayName = args[1];
+                    String name = displayName.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
+
+                    // Check if brotherhood exists
+                    if (plugin.getBrotherhoodManager().getBrotherhood(null, name) == null) {
+                        io.github.rubendalebout.brotherhoods.classes.Brotherhood brotherhood = new io.github.rubendalebout.brotherhoods.classes.Brotherhood(name)
+                                    .setDisplayName(displayName);
+
+                        try {
+                            plugin.getBrotherhoodManager().addBrotherhood(brotherhood);
+                        } catch (Exception e) {
+                            sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-failure"), true));
+                            return true;
+                        }
+                        sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-success"), true));
+                        return  true;
+                    }
+
+                    // Brotherhood exists
+                    sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-exists"), true));
+                    return true;
+                }
+
+                sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-arguments"), true));
+                return true;
+            }
         }
 
         // No arguments so check if user is in a Brotherhood
