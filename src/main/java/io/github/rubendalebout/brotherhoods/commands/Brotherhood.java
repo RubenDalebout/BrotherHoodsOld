@@ -18,7 +18,7 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // Check if user has the permissions
-        if (!sender.hasPermission("brotherhoods.brotherhood.create")) {
+        if (!sender.hasPermission("brotherhoods.brotherhood")) {
             sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("no-permission"), true));
             return true;
         }
