@@ -3,6 +3,8 @@ version: '${project.version}'
 main: io.github.rubendalebout.brotherhoods.BrotherHoods
 authors: [ DeZeeuw ]
 commands:
+  brotherhood:
+    description: Create an brotherhood or view your current brotherhood
   brotherhoods:
     description: View the list of Brotherhoods
     usage: "/<command>"
@@ -14,6 +16,8 @@ commands:
     aliases: [ ks, kingdomlist, klist ]
     usage: "/<command>"
 permissions:
+  brotherhoods.brotherhood:
+    description: Allow you to use brotherhood command
   brotherhoods.brotherhoods:
     description: Allows you to see all the brotherhoods
   brotherhoods.kingdom.add:
