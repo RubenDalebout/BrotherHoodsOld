@@ -23,8 +23,19 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        // Send the arguments to the user
-        sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-arguments"), true));
+        // Check if there are arguments
+        if (args.length > 0) {
+
+            return true;
+        }
+
+        // No arguments so check if user is in a Brotherhood
+        if (false) {
+            return true;
+        }
+
+        // Send user a message that he/she is not in a brotherhood
+        sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-not-in"), true));
         return true;
     }
 
