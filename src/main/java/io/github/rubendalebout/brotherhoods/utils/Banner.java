@@ -2,10 +2,12 @@ package io.github.rubendalebout.brotherhoods.utils;
 
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BannerMeta;
 import org.bukkit.block.banner.Pattern;
 import org.bukkit.block.banner.PatternType;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.HashMap;
 
@@ -34,5 +36,12 @@ public class Banner extends ItemStack {
         BannerMeta bannerMeta = (BannerMeta) this.getItemMeta();
         bannerMeta.addPattern(new Pattern(COLORS_MAP.get(colorCode), PatternType.BASE));
         this.setItemMeta(bannerMeta);
+
+        ItemMeta itemMeta = this.getItemMeta();
+        itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        itemMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        itemMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+
+        this.setItemMeta(itemMeta);
     }
 }
