@@ -30,11 +30,6 @@ public class BrotherhoodManager {
         brotherhoodList.removeIf(brotherhood -> brotherhood.getId().equals(uuid));
     }
 
-    public Boolean brotherhoodExists(String name) {
-        return brotherhoodList.stream()
-                .anyMatch(brotherhood -> brotherhood.getName().equalsIgnoreCase(name));
-    }
-
     public Brotherhood getBrotherhood(UUID uuid, String name) {
         return brotherhoodList.stream()
                 .filter(brotherhood -> uuid != null ? brotherhood.getId().equals(uuid)

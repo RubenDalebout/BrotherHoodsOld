@@ -52,11 +52,6 @@ public class KingdomManager {
         kingdomList.removeIf(kingdom -> kingdom.getId().equals(uuid));
     }
 
-    public Boolean kingdomExists(String name) {
-        return kingdomList.stream()
-                .anyMatch(kingdom -> kingdom.getName().equalsIgnoreCase(name));
-    }
-
     public Kingdom getKingdom(UUID uuid, String name) {
         return kingdomList.stream()
                 .filter(kingdom -> uuid != null ? kingdom.getId().equals(uuid)
