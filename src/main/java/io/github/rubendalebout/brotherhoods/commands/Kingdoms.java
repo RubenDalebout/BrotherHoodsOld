@@ -35,10 +35,10 @@ public class Kingdoms implements CommandExecutor, TabCompleter {
         }
 
         if (!(sender instanceof Player) || !plugin.getConfigManager().getGeneralConfiguration().getBoolean("g-kingdoms")) {
-            sender.sendMessage(plugin.getFormat().color(plugin.getKingdomManager().getKingdomList()
-                    .stream()
+            List<String> kingdoms = plugin.getKingdomManager().getKingdomList().stream()
                     .map(Kingdom::getDisplayName)
-                    .collect(Collectors.joining(", ")), true));
+                    .collect(Collectors.toList());
+            sender.sendMessage(kingdoms.isEmpty() ? plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-kingdoms-no-found"), true) : plugin.getFormat().color(String.join(", ", kingdoms), true));
             return true;
         }
 

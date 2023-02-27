@@ -8,6 +8,9 @@
 #                          |___/
 prefix: '&7[&c&lBrotherHoods&7]'
 
+# Brotherhoods command message
+c-brotherhoods-no-found: "&cNo Brotherhoods found..."
+
 # Kingdom command messages
 c-kingdom-add-exists: "&cThe kingdom your trying to add already exists"
 c-kingdom-add-error: "&cSomething has gone wrong while adding the kingdom"
@@ -19,6 +22,9 @@ c-kingdom-remove-success: "&aSuccessfully removed the kingdom"
 c-kingdom-remove-arguments: "&cWrong arguments &4&l/kingdom remove <name>"
 c-kingdom-arguments: "&cWrong arguments &4&l/kingdom [add/remove]"
 
+# Kingdoms command message
+c-kingdoms-no-found: "&cNo Kingdoms found..."
+
 # General messages
 enabled: "&aPlugin is enabled"
 no-permission: '&cYou do not have permission to do this.'
@@ -27,4 +33,5 @@ no-permission: '&cYou do not have permission to do this.'
 kingdom-no-description: "&cNo description"
 
 # GUI Settings
+g-brotherhoods: false # Set to true to enable GUI view for brotherhoods list in-game
 g-kingdoms: true # Set to true to enable GUI view for kingdom list in-game
