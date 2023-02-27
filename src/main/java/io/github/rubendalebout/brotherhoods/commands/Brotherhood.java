@@ -42,17 +42,27 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
                     String displayName = args[1];
                     String name = displayName.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
 
+                    // Check if user is already in a brotherhood
+                    if (plugin.getPlayerManager().getBrotherhood(player.getUniqueId()) != null) {
+                        sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-already-in"), true));
+                        return true;
+                    }
+
                     // Check if brotherhood exists
                     if (plugin.getBrotherhoodManager().getBrotherhood(null, name) == null) {
                         io.github.rubendalebout.brotherhoods.classes.Brotherhood brotherhood = new io.github.rubendalebout.brotherhoods.classes.Brotherhood(name)
-                                    .setDisplayName(displayName);
+                                .setDisplayName(displayName);
 
                         try {
+                            brotherhood.addPlayer(player.getUniqueId());
                             plugin.getBrotherhoodManager().addBrotherhood(brotherhood);
                         } catch (Exception e) {
                             sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-failure"), true));
                             return true;
                         }
+
+                        // Set for the player the brotherhood UUID
+                        plugin.getPlayerManager().setPlayerBrotherhood(player.getUniqueId(), brotherhood.getId());
                         sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-brotherhood-create-success"), true));
                         return  true;
                     }

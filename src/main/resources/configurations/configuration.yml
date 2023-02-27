@@ -14,6 +14,7 @@ c-brotherhood-create-arguments: "&cWrong arguments &4&l/brotherhood create <name
 c-brotherhood-create-success: "&aCreated the Brotherhood successful"
 c-brotherhood-create-failure: "&cSomething has gone wrong while adding the Brotherhood"
 c-brotherhood-not-in: "&cYou are not in a Brotherhood join one first"
+c-brotherhood-already-in: "&cYou cannot do this while your in a Brotherhood"
 
 # Brotherhoods command message
 c-brotherhoods-no-found: "&cNo Brotherhoods found..."

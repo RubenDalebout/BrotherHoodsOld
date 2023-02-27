@@ -30,4 +30,11 @@ public class PlayerManager {
     public UUID getBrotherhood(UUID player) {
         return this.players.get(player).getBrotherhood();
     }
+
+    public void setPlayerBrotherhood(UUID playerUUID, UUID brotherhoodUUID) {
+        BrotherhoodPlayer player = players.get(playerUUID);
+        if (player != null) {
+            player.setBrotherhood(brotherhoodUUID);
+        }
+    }
 }
