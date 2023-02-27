@@ -34,7 +34,7 @@ public class Kingdom implements CommandExecutor, TabCompleter {
                     String formattedName = name.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
 
                     // Check if kingdom already exists
-                    if (plugin.getKingdomManager().kingdomExists(formattedName)) {
+                    if (plugin.getKingdomManager().getKingdom(null, formattedName) != null) {
                         sender.sendMessage(plugin.getFormat().color(plugin.getConfigManager().getGeneralConfiguration().getString("c-kingdom-add-exists"), true));
                         return true;
                     }
@@ -59,7 +59,7 @@ public class Kingdom implements CommandExecutor, TabCompleter {
                 // Check if there is only 2 arguments given
                 if (args.length == 2) {
                     // Remove kingdom from the list if it exists
-                    if (plugin.getKingdomManager().kingdomExists(args[1])) {
+                    if (plugin.getKingdomManager().getKingdom(null, args[1]) != null) {
                         try {
                             plugin.getKingdomManager().removeKingdom(plugin.getKingdomManager().getKingdom(null, args[1]).getId());
                         } catch (Exception e) {
