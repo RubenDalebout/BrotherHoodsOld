@@ -40,7 +40,7 @@ public class Brotherhood implements CommandExecutor, TabCompleter {
             if (subcommand.equalsIgnoreCase("create") && sender.hasPermission("brotherhood.create")) {
                 if (args.length == 2) {
                     String displayName = args[1];
-                    String name = displayName.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
+                    String name = "&f" + displayName.toLowerCase().replaceAll("[^a-zA-Z0-9-]", "").replace(" ", "-");
 
                     // Check if user is already in a brotherhood
                     if (plugin.getPlayerManager().getBrotherhood(player.getUniqueId()) != null) {

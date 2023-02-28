@@ -12,6 +12,7 @@ public class Brotherhood {
     protected String displayName;
 
     protected List<UUID> players = new ArrayList<>();
+    protected List<BrotherhoodRank> ranks = new ArrayList<>();
 
     public UUID getId() {
         return id;
@@ -46,5 +47,26 @@ public class Brotherhood {
     public void removePlayer(UUID uuid) {
         if (this.players.contains(uuid))
             this.players.remove(uuid);
+    }
+
+    public List<BrotherhoodRank> getRanks() {
+        return ranks;
+    }
+
+    public BrotherhoodRank getRank(UUID uuid, String name) {
+        return ranks.stream()
+                .filter(rank -> uuid != null ? rank.getId().equals(uuid)
+                        : name != null ? rank.getName().equalsIgnoreCase(name)
+                        : false)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void addRank(BrotherhoodRank rank) {
+        ranks.add(rank);
+    }
+
+    public void removeRank(UUID uuid) {
+        ranks.removeIf(rank -> rank.getId().equals(uuid));
     }
 }
