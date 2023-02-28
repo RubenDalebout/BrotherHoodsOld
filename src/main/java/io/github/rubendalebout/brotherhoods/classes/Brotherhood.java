@@ -10,11 +10,8 @@ public class Brotherhood {
     protected UUID id = UUID.randomUUID();
     protected String name;
     protected String displayName;
-    protected ItemStack displayItem;
 
     protected List<UUID> players = new ArrayList<>();
-
-    protected int enteringLevel;
 
     public UUID getId() {
         return id;
@@ -35,15 +32,6 @@ public class Brotherhood {
 
     public String getDisplayName() {
         return displayName;
-    }
-
-    public Brotherhood setDisplayItem(ItemStack item) {
-        this.displayItem = item;
-        return this;
-    }
-
-    public ItemStack getDisplayItem() {
-        return displayItem;
     }
 
     public List<UUID> getPlayers() {
