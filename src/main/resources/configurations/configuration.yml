@@ -36,6 +36,8 @@ c-kingdoms-no-found: "&cNo Kingdoms found..."
 # General messages
 enabled: "&aPlugin is enabled"
 no-permission: '&cYou do not have permission to do this.'
+only-console: "&cOnly for in-game players available"
+no-brotherhood: "&cNo Brotherhood"
 
 # Kingdom messages / texts
 kingdom-no-description: "&cNo description"

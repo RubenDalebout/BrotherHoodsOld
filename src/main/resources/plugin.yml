@@ -3,6 +3,8 @@ version: '${project.version}'
 main: io.github.rubendalebout.brotherhoods.BrotherHoods
 authors: [ DeZeeuw ]
 commands:
+  brofile:
+    description: See your information
   brotherhood:
     description: Create an brotherhood or view your current brotherhood
   brotherhoods:
@@ -16,6 +18,8 @@ commands:
     aliases: [ ks, kingdomlist, klist ]
     usage: "/<command>"
 permissions:
+  brotherhoods.brofile:
+    description: Allow you to see your information in-game
   brotherhoods.brotherhood:
     description: Allow you to use brotherhood command
   brotherhoods.brotherhoods:

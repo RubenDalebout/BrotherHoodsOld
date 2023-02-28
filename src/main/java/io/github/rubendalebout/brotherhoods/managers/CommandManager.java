@@ -1,15 +1,16 @@
 package io.github.rubendalebout.brotherhoods.managers;
 
 import io.github.rubendalebout.brotherhoods.BrotherHoods;
-import io.github.rubendalebout.brotherhoods.commands.Brotherhood;
-import io.github.rubendalebout.brotherhoods.commands.Brotherhoods;
-import io.github.rubendalebout.brotherhoods.commands.Kingdom;
-import io.github.rubendalebout.brotherhoods.commands.Kingdoms;
+import io.github.rubendalebout.brotherhoods.commands.*;
 import org.bukkit.command.PluginCommand;
 
 public class CommandManager {
 
     public CommandManager(BrotherHoods plugin) {
+        PluginCommand brfCommand = plugin.getCommand("brofile");
+        Brofile brofile = new Brofile(plugin);
+        brfCommand.setExecutor(brofile);
+
         PluginCommand bhCommand = plugin.getCommand("brotherhood");
         Brotherhood brotherhood = new Brotherhood(plugin);
         bhCommand.setExecutor(brotherhood);
