@@ -27,6 +27,10 @@ public class PlayerManager {
         this.players.put(uuid, new BrotherhoodPlayer());
     }
 
+    public boolean playerExists(UUID player) {
+        return this.players.containsKey(player);
+    }
+
     public UUID getBrotherhood(UUID player) {
         return this.players.get(player).getBrotherhood();
     }
